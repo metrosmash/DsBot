@@ -8,11 +8,12 @@ TOKEN_HERE = os.getenv("DISCORD_TOKEN_KEY")
 
 
 def handle_user_messages(msg) ->str:
-    message = msg.lower() #Converts all inputs to lower case
-    if(message == "hi"):
+    message = msg.lower()  #Converts all inputs to lower case
+    if (message == "-hi"):
         return "Hi there"
-    if(message == "hello"):
+    if message == "-hello":
         return "Hello user. Welcome"
+
 
 
 async def processMessage(message, user_message):
@@ -31,11 +32,14 @@ def runBot():
     async def on_ready():
         print({client.user}, 'is live')
 
+
+
     @client.event
     async def on_message(message):
         if message.author == client.user:
             return
-        await processMessage(message, 'hi')
+        await processMessage(message, '-hi')
+
 
     client.run(discord_token)
 
