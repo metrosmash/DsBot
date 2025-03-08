@@ -11,7 +11,7 @@ intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='$', intents=intents)
+bot = commands.Bot(command_prefix='$', intents=intents, help_command=None)
 
 
 @bot.event
@@ -21,7 +21,7 @@ async def on_ready():
 
 
 @bot.command()
-async def Help(ctx):
+async def help(ctx):
     await ctx.send("""
 Hello this Bot is a rank selection bot to play select 4 ranks in 1 to 10 
 Commands: \n
@@ -34,6 +34,11 @@ predict it.
                   
                     """)
 
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.errors.CommandNotFound):
+        await ctx.send("Wrong command. Please try $help for more  information")
 
 
 @bot.command()
@@ -63,14 +68,17 @@ async def rank_selection_error(ctx, error):
         await ctx.send("You must provide exactly 4 ranks. Usage: $rank_selection <rank1> <rank2> <rank3> <rank4>")
 
 
+
 @bot.command()
 async def guess(ctx):
     answer = random.randint(1, 10)
     await ctx.send('Guess a number between 1 and 10.')
+
     try:
         player_guess = await bot.wait_for("message", check=lambda msg: msg.author == ctx.author, timeout=60.0)
     except TimeoutError:
         return await ctx.send(f'Sorry, you took too long to answer .')
+
     if player_guess == answer:
         await ctx.send("WoW You are Correct ")
     else:
