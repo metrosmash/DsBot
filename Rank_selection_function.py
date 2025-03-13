@@ -22,18 +22,18 @@ async def on_ready():
 
 @bot.command()
 async def help(ctx):
-    await ctx.send("""
-Hello this Bot is a rank selection bot to play select 4 ranks in 1 to 10 
-Commands: \n
-$rank_selection rank1 ....
-(NOTE: input the rank selected after the command leaving space between them )
-This rank selection game can be played between two people (Essentially its P2P ) \n
-$guess:
-in this guess game  the computer selects a random number in between 1 and 10 then the player tries to 
-predict it.
-                  
-                    """)
-
+    message = """
+        Hello this Bot is a rank selection bot to play select 4 ranks in 1 to 10 
+        Commands: \n
+        $rank_selection rank1 ....
+        (NOTE: input the rank selected after the command leaving space between them )
+        This rank selection game can be played between two people (Essentially its P2P ) \n
+        $guess:
+        in this guess game  the computer selects a random numb~er in between 1 and 10 then the player tries to 
+        predict it.    
+        """
+    embed = discord.Embed(title="Help", description=message, color=0x00ff00)
+    await ctx.send(embed = embed)
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -72,7 +72,9 @@ async def rank_selection_error(ctx, error):
 @bot.command()
 async def guess(ctx):
     answer = random.randint(1, 10)
-    await ctx.send('Guess a number between 1 and 10.')
+    message = 'Guess a number between 1 and 10.'
+    embed = discord.Embed(title="Guess Game", description=message, color=0x00ff00)
+    await ctx.send(embed=embed)
 
     try:
         player_guess = await bot.wait_for("message", check=lambda msg: msg.author == ctx.author, timeout=60.0)
