@@ -1,0 +1,69 @@
+# Discord Bot
+
+A Discord bot built using the Discord.py library. This bot provides various features and commands for server management, entertainment, and more.
+
+## Features
+
+- Moderation commands (kick, ban, mute, etc.)
+- Fun commands (jokes, memes, etc.)
+- Utility commands (server info, user info, etc.)
+- Customizable prefix for commands
+
+## Getting Started
+
+These instructions will help you set up and run the bot on your local machine.
+
+### Prerequisites
+
+- python3
+- discord py 
+- Discord account and a server where you have permission to add a bot
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/discord-bot.git
+   cd discord-bot
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add the following:
+   ```
+   DISCORD_TOKEN=your_discord_bot_token
+   PREFIX=!
+   ```
+
+4. Run the bot:
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+Once the bot is running, you can use the following commands:
+
+- `!kick @user` - Kicks the mentioned user from the server.
+- `!ban @user` - Bans the mentioned user from the server.
+- `!mute @user` - Mutes the mentioned user.
+- `!unmute @user` - Unmutes the mentioned user.
+- `!joke` - Tells a random joke.
+- `!meme` - Sends a random meme.
+- `!serverinfo` - Displays information about the server.
+- `!userinfo @user` - Displays information about the mentioned user.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or new features to suggest.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Discord.js](https://discord.js.org/) - A powerful library for interacting with the Discord API
