@@ -49,14 +49,6 @@ Once the bot is running, you can use the following commands:
 
 - `$guess` - starts a guess game with the bot
 - `$rank_selection` - starts a rank selection game with another user.
-- `!kick @user` - Kicks the mentioned user from the server.
-- `!ban @user` - Bans the mentioned user from the server.
-- `!mute @user` - Mutes the mentioned user.
-- `!unmute @user` - Unmutes the mentioned user.
-- `!joke` - Tells a random joke.
-- `!meme` - Sends a random meme.
-- `!serverinfo` - Displays information about the server.
-- `!userinfo @user` - Displays information about the mentioned user.
 
 ## Contributing
 
