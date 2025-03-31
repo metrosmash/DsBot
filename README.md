@@ -48,7 +48,7 @@ These instructions will help you set up and run the bot on your local machine.
 Once the bot is running, you can use the following commands:
 
 - `$guess` - starts a guess game with the bot
-- `$rank_selection` - starts a rank selection game with another user.
+- `$rank_selection rank1 rank2 rank3 rank4` - starts a rank selection game with another user.
 - `!kick @user` - Kicks the mentioned user from the server.
 - `!ban @user` - Bans the mentioned user from the server.
 - `!mute @user` - Mutes the mentioned user.
