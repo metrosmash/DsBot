@@ -28,6 +28,12 @@ class Commands(commands.Cog):
         """
         await ctx.send(f'🏓 {round(self.bot.latency * 1000)} ms.')
 
+    @commands.command()
+    async def slap(self,ctx, members: commands.Greedy[discord.Member], *, reason='no reason'):
+        slapped = ", ".join(x.name for x in members)
+        await ctx.send(f'{slapped} just got slapped for {reason}')
+
+
 # Setup function to add the Cog to the bot
 async def setup(bot):
     await bot.add_cog(Commands(bot))
